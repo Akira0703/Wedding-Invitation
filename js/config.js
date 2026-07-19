@@ -17,7 +17,7 @@ window.WEDDING_CONFIG = Object.freeze({
     mapEmbedUrl: "https://www.google.com/maps?q=THE%20CONDER%20HOUSE%20Nagoya&output=embed"
   },
   rsvp: {
-    gasUrl: "https://script.google.com/macros/s/AKfycbyIt68YKZmSG0dLQGTWAeQaA9eaYu97Z3ciT_zVOri1C5VuEK1G-m7FCpSHG1V0SuFA/exec",
+    gasUrl: "https://script.google.com/macros/s/AKfycbwz3a55jXGnsfEyyMLPhHWmIrmANLcFYmj9-caQV66vbh3SjpFeDWFCCueMFDx_1i23/exec",
     timeoutMs: 15000
   },
   heroImages: [
