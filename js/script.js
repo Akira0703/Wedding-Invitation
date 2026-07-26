@@ -20,7 +20,7 @@ function applyWeddingConfig() {
         if (element) element.textContent = value;
     };
 
-    const { couple, wedding, venue, heroImages, galleryImages } = CONFIG;
+    const { couple, wedding, venue, heroImages, galleryImages, storyImages = [] } = CONFIG;
     document.title = `${couple.groom} & ${couple.bride} | Wedding Invitation`;
     const description = document.getElementById("pageDescription");
     if (description) description.content = `${couple.groom} & ${couple.bride} Wedding Invitation - ${wedding.shortDate}`;
@@ -60,6 +60,9 @@ function applyWeddingConfig() {
         item.dataset.image = imagePath;
         const image = item.querySelector("img");
         if (image) image.src = imagePath;
+    });
+    document.querySelectorAll(".story-photo img").forEach((image, index) => {
+        if (storyImages[index]) image.src = storyImages[index];
     });
 }
 

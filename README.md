@@ -79,3 +79,11 @@ Actionsが完了すると、確認用URLがworkflowのDeployment欄に表示さ�
 ### 本番前確認
 
 `FINAL_CHECKLIST.md` を上から確認してください。
+
+
+## 和モダン試作 / Our Story写真
+
+- `body.wa-modern` で和モダンテーマを適用しています。
+- Our Storyの写真は `images/story/story1.jpg`〜`story3.jpg` です。
+- 同名ファイルへ差し替えるだけで更新できます。
+- 画像パスを変更する場合は `js/config.js` の `storyImages` を編集してください。

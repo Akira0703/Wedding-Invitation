@@ -29,5 +29,10 @@ window.WEDDING_CONFIG = Object.freeze({
     "images/photo1.jpg",
     "images/photo2.jpg",
     "images/photo3.jpg"
+  ],
+  storyImages: [
+    "images/story/story1.jpg",
+    "images/story/story2.jpg",
+    "images/story/story3.jpg"
   ]
 });
