@@ -1,216 +1,172 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f5f1e9">
-    <meta id="pageDescription" name="description" content="Akira & Hinako Wedding Invitation - 2026.11.14">
-    <title id="pageTitle">Akira & Hinako | Wedding Invitation</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#f5f1e9" name="theme-color"/>
+<meta content="Akira &amp; Hinako Wedding Invitation - 2026.11.14" id="pageDescription" name="description"/>
+<title id="pageTitle">Akira &amp; Hinako | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Noto+Sans+JP:wght@300;400;500&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Shippori+Mincho:wght@400;500;600;700&amp;family=Yuji+Syuku&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-<body class="is-locked wa-modern">
-    <section id="invitationCover" class="invitation-cover" aria-label="招待状を開く">
-        <div class="cover-glow" aria-hidden="true"></div>
-        <div class="envelope-scene">
-            <p class="cover-kicker">謹んで ご案内申し上げます</p>
-            <button id="openInvitation" class="envelope-button" type="button" aria-label="招待状を開く">
-                <span class="envelope">
-                    <span class="envelope-back"></span>
-                    <span class="envelope-letter">
-                        <span class="letter-monogram">A <i>&</i> H</span>
-                        <span id="coverDate" class="letter-date">2026.11.14</span>
-                    </span>
-                    <span class="envelope-front"></span>
-                    <span class="envelope-flap"></span>
-                    <span class="wax-seal">A&H</span>
-                </span>
-            </button>
-            <p class="cover-action">招待状をひらく</p>
-        </div>
-    </section>
-
-    <div id="loading" aria-hidden="true">
-        <div class="loading-content">
-            <p class="loading-subtitle">Wedding Invitation</p>
-            <h2 id="loadingNames">Akira & Hinako</h2>
-            <span class="loading-line"></span>
-        </div>
-    </div>
-
-    <main>
-        <header class="hero" id="top">
-            <div class="hero-slides" aria-hidden="true">
-                <div class="hero-slide is-active" style="background-image:url('images/hero.jpg')"></div>
-                <div class="hero-slide" style="background-image:url('images/photo1.jpg')"></div>
-                <div class="hero-slide" style="background-image:url('images/photo2.jpg')"></div>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <p class="sub-title">結婚式のご案内</p>
-                <h1><span id="heroGroom">Akira</span><i>&</i><span id="heroBride">Hinako</span></h1>
-                <p id="heroDate" class="date">14 November 2026</p>
-                <p id="heroVenue" class="venue-mini">THE CONDER HOUSE</p>
-            </div>
-            <a class="scroll-down" href="#message" aria-label="メッセージへ移動">
-                <span>Scroll</span>
-                <i></i>
-            </a>
-        </header>
-
-        <section class="section section-countdown reveal">
-            <div class="countdown-card">
-                <p class="eyebrow">Until our wedding</p>
-                <p id="countdown" class="countdown-number">Loading...</p>
-                <p id="countdownDate" class="countdown-date">2026.11.14 SAT</p>
-            </div>
-        </section>
-
-        <section class="section message-section reveal" id="message">
-            <div class="section-heading">
-                <p class="eyebrow">With gratitude</p>
-                <h2>Message</h2>
-            </div>
-            <p class="message-copy">
-                このたび 私たちは結婚式を挙げることとなりました。<br>
-                日頃お世話になっている皆さまへ感謝の気持ちを込めて、<br class="desktop-only">
-                ささやかな宴を催します。<br><br>
-                大切な皆さまと特別な一日を過ごせることを、<br class="desktop-only">
-                心より楽しみにしております。
-            </p>
-        </section>
-
-        <section class="story-section reveal">
-            <div class="section section-heading">
-                <p class="eyebrow">Our journey</p>
-                <h2>Our Story</h2>
-            </div>
-            <div class="story-track">
-                <article class="story-item reveal-child">
-                    <figure class="story-photo"><img src="images/story/story1.jpg" alt="2017年、ふたりが出会った頃の写真"></figure>
-                    <div class="story-copy"><span class="story-number">一</span><time>2017</time><h3>出会い</h3><p>私たちが出会った年。ここからふたりの物語が始まりました。</p></div>
-                </article>
-                <article class="story-item reveal-child">
-                    <figure class="story-photo"><img src="images/story/story2.jpg" alt="2018年9月17日、交際が始まった頃の写真"></figure>
-                    <div class="story-copy"><span class="story-number">二</span><time>2018.09.17</time><h3>ふたりの始まり</h3><p>お付き合いが始まった大切な日。たくさんの思い出を重ねてきました。</p></div>
-                </article>
-                <article class="story-item reveal-child">
-                    <figure class="story-photo"><img src="images/story/story3.jpg" alt="2026年11月14日の結婚式をイメージした写真"></figure>
-                    <div class="story-copy"><span class="story-number">三</span><time>2026.11.14</time><h3>結びの日</h3><p>大切な皆さまに見守られながら、新しい人生を歩み始めます。</p></div>
-                </article>
-            </div>
-        </section>
-
-        <section class="gallery-section reveal">
-            <div class="section section-heading">
-                <p class="eyebrow">Captured moments</p>
-                <h2>Gallery</h2>
-            </div>
-            <div class="gallery">
-                <button class="gallery-item gallery-item-large" type="button" data-image="images/photo1.jpg" aria-label="写真1を拡大">
-                    <img src="images/photo1.jpg" alt="AkiraとHinakoの前撮り写真1">
-                </button>
-                <button class="gallery-item" type="button" data-image="images/photo2.jpg" aria-label="写真2を拡大">
-                    <img src="images/photo2.jpg" alt="AkiraとHinakoの前撮り写真2">
-                </button>
-                <button class="gallery-item" type="button" data-image="images/photo3.jpg" aria-label="写真3を拡大">
-                    <img src="images/photo3.jpg" alt="AkiraとHinakoの前撮り写真3">
-                </button>
-            </div>
-        </section>
-
-        <section class="information-section reveal" id="information">
-            <div class="section">
-                <div class="section-heading light-heading">
-                    <p class="eyebrow">Wedding details</p>
-                    <h2>Information</h2>
-                </div>
-                <div class="info-grid">
-                    <article class="info-card">
-                        <span>01</span><p>Date</p><h3 id="infoDate">2026.11.14</h3><small id="infoDay">Saturday</small>
-                    </article>
-                    <article class="info-card">
-                        <span>02</span><p>Venue</p><h3 id="infoVenue">THE CONDER HOUSE</h3><small id="infoArea">Nagoya, Aichi</small>
-                    </article>
-                    <article class="info-card">
-                        <span>03</span><p>Schedule</p><h3>Details Coming Soon</h3><small>確定後に更新いたします</small>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="access-section reveal">
-            <div class="section">
-                <div class="section-heading">
-                    <p class="eyebrow">Location</p>
-                    <h2>Access</h2>
-                </div>
-                <div class="access-card">
-                    <div class="access-copy">
-                        <p class="access-label">Venue</p>
-                        <h3 id="accessVenue">THE CONDER HOUSE</h3>
-                        <p id="accessAddress">〒460-0003<br>愛知県名古屋市中区錦2丁目20-25</p>
-                        <a id="accessMapLink" class="outline-button" href="https://maps.app.goo.gl/wSW1pDJomre6aAv67" target="_blank" rel="noopener noreferrer">Google Mapsで見る</a>
-                    </div>
-                    <div class="map-wrap">
-                        <iframe id="mapEmbed" title="THE CONDER HOUSEの地図" src="https://www.google.com/maps?q=THE%20CONDER%20HOUSE%20Nagoya&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section rsvp-section reveal" id="rsvp">
-            <div class="section-heading">
-                <p class="eyebrow">Please reply</p>
-                <h2>RSVP</h2>
-            </div>
-            <p class="rsvp-intro">お手数ですが、出欠についてご回答をお願いいたします。</p>
-
-            <form id="rsvpForm" method="post" target="rsvpResponseFrame" novalidate>
-                <input type="hidden" name="submissionId" id="submissionId">
-                <fieldset class="attendance-fieldset">
-                    <legend>ご出欠 <span aria-hidden="true">*</span></legend>
-                    <div class="radio-group">
-                        <label class="attendance-option"><input type="radio" name="attendance" value="出席" required><span>出席します</span></label>
-                        <label class="attendance-option"><input type="radio" name="attendance" value="欠席"><span>欠席します</span></label>
-                    </div>
-                </fieldset>
-                <label class="form-field" for="name"><span>お名前 <span aria-hidden="true">*</span></span><input type="text" id="name" name="name" autocomplete="name" required></label>
-                <label class="form-field" for="allergy"><span>アレルギー・苦手な食材</span><textarea id="allergy" name="allergy" rows="3" placeholder="ない場合は「なし」とご記入ください"></textarea></label>
-                <label class="form-field" for="children"><span>同伴のお子様</span><select id="children" name="children"><option value="">選択してください</option><option value="なし">なし</option><option value="1人">1人</option><option value="2人">2人</option><option value="3人以上">3人以上</option></select></label>
-                <label class="form-field" for="consideration"><span>配慮事項</span><textarea id="consideration" name="consideration" rows="4" placeholder="車椅子・妊娠中など、当日の配慮が必要な場合にご記入ください"></textarea></label>
-                <label class="form-field" for="message"><span>メッセージ</span><textarea id="message" name="message" rows="5" placeholder="任意でご記入ください"></textarea></label>
-                <p id="formError" class="form-error" role="alert" aria-live="polite"></p>
-                <aside class="privacy-notice" aria-labelledby="privacy-title">
-                    <h3 id="privacy-title">個人情報の取り扱いについて</h3>
-                    <div class="privacy-notice-body">
-                        <p>ご入力いただいた氏名、出欠情報、食物アレルギー、お子様に関する情報、配慮事項およびメッセージは、結婚式・披露宴の出欠確認、席次や料理の手配、当日のご案内および必要な対応の準備を目的として利用いたします。</p>
-                        <p>ご入力いただいた情報は、新郎新婦が適切に管理し、上記の目的以外には利用いたしません。また、法令に基づく場合を除き、ご本人の同意なく第三者へ提供することはありません。</p>
-                        <p>回答内容は、アクセスを制限した環境で保管し、結婚式終了後、必要な確認や精算等が完了した時点で、適切な方法により削除いたします。</p>
-                        <p>食物アレルギーや配慮事項については、当日の対応に必要な範囲でご記入ください。詳しい病歴や治療内容など、結婚式の準備に必要のない情報は記載しないようお願いいたします。</p>
-                        <p class="privacy-consent">送信をもって、上記の個人情報の取り扱いにご同意いただいたものといたします。</p>
-                    </div>
-                </aside>
-
-                <button class="submit-button" type="submit"><span>回答を送信する</span></button>
-            </form>
-            <div id="sending" class="form-status" role="status" aria-live="polite"><span class="sending-spinner" aria-hidden="true"></span><p>送信しています...</p></div>
-            <div id="complete" class="form-status" tabindex="-1"><p class="eyebrow">Response received</p><h3>Thank You!</h3><p>ご回答ありがとうございました。<br>当日お会いできることを楽しみにしています。</p></div>
-            <iframe id="rsvpResponseFrame" name="rsvpResponseFrame" title="RSVP送信結果" class="response-frame" aria-hidden="true"></iframe>
-        </section>
-    </main>
-
-    <footer><p><span id="footerGroom">Akira</span> <i>&</i> <span id="footerBride">Hinako</span></p><small id="footerDate">14 November 2026</small></footer>
-
-    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="写真を拡大表示" hidden>
-        <button id="closeLightbox" type="button" aria-label="閉じる">×</button>
-        <img id="lightboxImage" src="" alt="拡大写真">
-    </div>
-
-    <script src="js/config.js"></script>
-    <script src="js/script.js"></script>
+<body class="is-locked wa-kacho">
+<section aria-label="招待状を開く" class="invitation-cover" id="invitationCover">
+<div aria-hidden="true" class="cover-washi"></div>
+<div class="noren-stage">
+<p class="cover-kicker">寿　御結婚披露宴</p>
+<button aria-label="招待状を開く" class="noren-button" id="openInvitation" type="button">
+<span aria-hidden="true" class="noren-frame">
+<span class="noren-panel noren-left"><i>結</i></span>
+<span class="noren-panel noren-right"><i>縁</i></span>
+<span class="noren-knot"></span>
+</span>
+<span class="noren-seal">寿</span>
+</button>
+<div class="cover-names"><span>Akira</span><b>・</b><span>Hinako</span></div>
+<p class="cover-date" id="coverDate">2026.11.14</p>
+<p class="cover-action">暖簾をひらく</p>
+</div></section>
+<div aria-hidden="true" id="loading"><div class="loading-content"><span class="loading-kamon">寿</span><p>ご縁を結ぶ日へ</p><h2 id="loadingNames">Akira &amp; Hinako</h2><span class="loading-line"></span></div></div>
+<main>
+<header class="hero" id="top">
+<div aria-hidden="true" class="hero-slides">
+<div class="hero-slide is-active" style="background-image:url('images/hero.jpg')"></div>
+<div class="hero-slide" style="background-image:url('images/photo1.jpg')"></div>
+<div class="hero-slide" style="background-image:url('images/photo2.jpg')"></div>
+</div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div aria-hidden="true" class="hero-kamon"><span>寿</span></div>
+<div class="hero-title-grid">
+<p class="hero-vertical hero-vertical-right">謹んで<br/>ご案内<br/>申し上げます</p>
+<div class="hero-main-title">
+<p class="sub-title">御結婚披露宴</p>
+<h1><span id="heroGroom">Akira</span><i>と</i><span id="heroBride">Hinako</span></h1>
+<span aria-hidden="true" class="mizuhiki-line"></span>
+<p class="date" id="heroDate">14 November 2026</p>
+<p class="venue-mini" id="heroVenue">THE CONDER HOUSE</p>
+</div>
+<p class="hero-vertical hero-vertical-left">佳き日に<br/>皆様と<br/>ともに</p>
+</div></div>
+<a aria-label="メッセージへ移動" class="scroll-down" href="#message">
+<span>Scroll</span>
+<i></i>
+</a>
+</header>
+<section class="section section-countdown reveal">
+<div class="countdown-card"><span aria-hidden="true" class="countdown-sun"></span><p class="eyebrow">結びの日まで</p><p class="countdown-number" id="countdown">Loading...</p><p class="countdown-date" id="countdownDate">2026.11.14 SAT</p></div>
+</section>
+<section class="section message-section reveal" id="message">
+<div class="section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Greeting</p><h2>ご挨拶</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<p class="message-copy">このたび 私たちは<br/>結婚式を挙げることとなりました。<br/><br/>これまで支えてくださった皆様へ<br/>感謝の心を込めまして<br/>ささやかな宴を催したく存じます。<br/><br/>佳き日に皆様とお会いできますことを<br/>心より楽しみにしております。</p>
+</section>
+<section class="story-section reveal">
+<div class="section section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Our Story</p><h2>ふたりの歩み</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="story-track">
+<article class="story-item reveal-child">
+<figure class="story-photo"><img alt="2017年、ふたりが出会った頃の写真" src="images/story/story1.jpg"/></figure>
+<div class="story-copy"><span class="story-seal">第1章</span><span class="story-number">一</span><time>2017</time><h3>出会い</h3><p>私たちが出会った年。ここからふたりの物語が始まりました。</p></div>
+</article>
+<article class="story-item reveal-child">
+<figure class="story-photo"><img alt="2018年9月17日、交際が始まった頃の写真" src="images/story/story2.jpg"/></figure>
+<div class="story-copy"><span class="story-seal">第2章</span><span class="story-number">二</span><time>2018.09.17</time><h3>ふたりの始まり</h3><p>お付き合いが始まった大切な日。たくさんの思い出を重ねてきました。</p></div>
+</article>
+<article class="story-item reveal-child">
+<figure class="story-photo"><img alt="2026年11月14日の結婚式をイメージした写真" src="images/story/story3.jpg"/></figure>
+<div class="story-copy"><span class="story-seal">第3章</span><span class="story-number">三</span><time>2026.11.14</time><h3>結びの日</h3><p>大切な皆さまに見守られながら、新しい人生を歩み始めます。</p></div>
+</article>
+</div>
+</section>
+<section class="gallery-section reveal">
+<div class="section section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Gallery</p><h2>想い出</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="gallery">
+<button aria-label="写真1を拡大" class="gallery-item gallery-item-large" data-image="images/photo1.jpg" type="button">
+<img alt="AkiraとHinakoの前撮り写真1" src="images/photo1.jpg"/>
+</button>
+<button aria-label="写真2を拡大" class="gallery-item" data-image="images/photo2.jpg" type="button">
+<img alt="AkiraとHinakoの前撮り写真2" src="images/photo2.jpg"/>
+</button>
+<button aria-label="写真3を拡大" class="gallery-item" data-image="images/photo3.jpg" type="button">
+<img alt="AkiraとHinakoの前撮り写真3" src="images/photo3.jpg"/>
+</button>
+</div>
+</section>
+<section class="information-section reveal" id="information">
+<div class="section">
+<div class="section-heading light-heading"><span class="heading-mark">寿</span><p class="eyebrow">Information</p><h2>ご案内</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="info-grid">
+<article class="info-card">
+<span>壱</span><p>日取り</p><h3 id="infoDate">2026.11.14</h3><small id="infoDay">Saturday</small>
+</article>
+<article class="info-card">
+<span>弐</span><p>会場</p><h3 id="infoVenue">THE CONDER HOUSE</h3><small id="infoArea">Nagoya, Aichi</small>
+</article>
+<article class="info-card">
+<span>参</span><p>お時間</p><h3>追ってご案内</h3><small>確定後に更新いたします</small>
+</article>
+</div>
+</div>
+</section>
+<section class="access-section reveal">
+<div class="section">
+<div class="section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Access</p><h2>会場まで</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="access-card">
+<div class="access-copy">
+<p class="access-label">会場</p>
+<h3 id="accessVenue">THE CONDER HOUSE</h3>
+<p id="accessAddress">〒460-0003<br/>愛知県名古屋市中区錦2丁目20-25</p>
+<a class="outline-button" href="https://maps.app.goo.gl/wSW1pDJomre6aAv67" id="accessMapLink" rel="noopener noreferrer" target="_blank">Google Mapsで見る</a>
+</div>
+<div class="map-wrap">
+<iframe id="mapEmbed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=THE%20CONDER%20HOUSE%20Nagoya&amp;output=embed" title="THE CONDER HOUSEの地図"></iframe>
+</div>
+</div>
+</div>
+</section>
+<section class="section rsvp-section reveal" id="rsvp">
+<div class="section-heading"><span class="heading-mark">寿</span><p class="eyebrow">RSVP</p><h2>ご出欠</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<p class="rsvp-intro">お手数ではございますが、ご出欠をお知らせくださいませ。</p>
+<form id="rsvpForm" method="post" novalidate="" target="rsvpResponseFrame">
+<input id="submissionId" name="submissionId" type="hidden"/>
+<fieldset class="attendance-fieldset">
+<legend>ご出欠 <span aria-hidden="true">*</span></legend>
+<div class="radio-group">
+<label class="attendance-option"><input name="attendance" required="" type="radio" value="出席"/><span>出席します</span></label>
+<label class="attendance-option"><input name="attendance" type="radio" value="欠席"/><span>欠席します</span></label>
+</div>
+</fieldset>
+<label class="form-field" for="name"><span>お名前 <span aria-hidden="true">*</span></span><input autocomplete="name" id="name" name="name" required="" type="text"/></label>
+<label class="form-field" for="allergy"><span>アレルギー・苦手な食材</span><textarea id="allergy" name="allergy" placeholder="ない場合は「なし」とご記入ください" rows="3"></textarea></label>
+<label class="form-field" for="children"><span>同伴のお子様</span><select id="children" name="children"><option value="">選択してください</option><option value="なし">なし</option><option value="1人">1人</option><option value="2人">2人</option><option value="3人以上">3人以上</option></select></label>
+<label class="form-field" for="consideration"><span>配慮事項</span><textarea id="consideration" name="consideration" placeholder="車椅子・妊娠中など、当日の配慮が必要な場合にご記入ください" rows="4"></textarea></label>
+<label class="form-field" for="message"><span>メッセージ</span><textarea id="message" name="message" placeholder="任意でご記入ください" rows="5"></textarea></label>
+<p aria-live="polite" class="form-error" id="formError" role="alert"></p>
+<aside aria-labelledby="privacy-title" class="privacy-notice">
+<h3 id="privacy-title">個人情報の取り扱いについて</h3>
+<div class="privacy-notice-body">
+<p>ご入力いただいた氏名、出欠情報、食物アレルギー、お子様に関する情報、配慮事項およびメッセージは、結婚式・披露宴の出欠確認、席次や料理の手配、当日のご案内および必要な対応の準備を目的として利用いたします。</p>
+<p>ご入力いただいた情報は、新郎新婦が適切に管理し、上記の目的以外には利用いたしません。また、法令に基づく場合を除き、ご本人の同意なく第三者へ提供することはありません。</p>
+<p>回答内容は、アクセスを制限した環境で保管し、結婚式終了後、必要な確認や精算等が完了した時点で、適切な方法により削除いたします。</p>
+<p>食物アレルギーや配慮事項については、当日の対応に必要な範囲でご記入ください。詳しい病歴や治療内容など、結婚式の準備に必要のない情報は記載しないようお願いいたします。</p>
+<p class="privacy-consent">送信をもって、上記の個人情報の取り扱いにご同意いただいたものといたします。</p>
+</div>
+</aside>
+<button class="submit-button" type="submit"><span>回答を送信する</span></button>
+</form>
+<div aria-live="polite" class="form-status" id="sending" role="status"><span aria-hidden="true" class="sending-spinner"></span><p>送信しています...</p></div>
+<div class="form-status" id="complete" tabindex="-1"><span class="complete-seal">寿</span><p class="eyebrow">ご回答を承りました</p><h3>御礼</h3><p>ご回答いただき、誠にありがとうございます。<br/>当日お目にかかれますことを楽しみにしております。</p></div>
+<iframe aria-hidden="true" class="response-frame" id="rsvpResponseFrame" name="rsvpResponseFrame" title="RSVP送信結果"></iframe>
+</section>
+</main>
+<footer><span class="footer-kamon">寿</span><p><span id="footerGroom">Akira</span><i>と</i><span id="footerBride">Hinako</span></p><small id="footerDate">14 November 2026</small><span aria-hidden="true" class="footer-ornament"></span></footer>
+<div aria-label="写真を拡大表示" aria-modal="true" class="lightbox" hidden="" id="lightbox" role="dialog">
+<button aria-label="閉じる" id="closeLightbox" type="button">×</button>
+<img alt="拡大写真" id="lightboxImage" src=""/>
+</div>
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

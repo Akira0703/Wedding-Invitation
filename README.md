@@ -87,3 +87,8 @@ Actionsが完了すると、確認用URLがworkflowのDeployment欄に表示さ�
 - Our Storyの写真は `images/story/story1.jpg`〜`story3.jpg` です。
 - 同名ファイルへ差し替えるだけで更新できます。
 - 画像パスを変更する場合は `js/config.js` の `storyImages` を編集してください。
+
+
+## feature/wa-modern radical redesign
+
+This version uses a fully redesigned Japanese visual language: noren opening, vertical typography, shoji framing, mizuhiki, hanging-scroll message, emakimono story, and folding-screen gallery. RSVP/GAS behavior is unchanged.
