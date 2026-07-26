@@ -51,16 +51,36 @@ function applyWeddingConfig() {
         mapEmbed.title = `${venue.name}の地図`;
     }
 
-    document.querySelectorAll(".hero-slide").forEach((slide, index) => {
-        if (heroImages[index]) slide.style.backgroundImage = `url('${heroImages[index]}')`;
-    });
-    document.querySelectorAll(".gallery-item").forEach((item, index) => {
-        const imagePath = galleryImages[index];
-        if (!imagePath) return;
-        item.dataset.image = imagePath;
-        const image = item.querySelector("img");
-        if (image) image.src = imagePath;
-    });
+    const heroContainer = document.querySelector(".hero-slides");
+    if (heroContainer) {
+        heroContainer.innerHTML = "";
+        heroImages.forEach((imagePath, index) => {
+            const slide = document.createElement("div");
+            slide.className = `hero-slide${index === 0 ? " is-active" : ""}`;
+            slide.style.backgroundImage = `url('${imagePath}')`;
+            heroContainer.appendChild(slide);
+        });
+    }
+
+    const gallery = document.getElementById("gallery");
+    if (gallery) {
+        gallery.innerHTML = "";
+        galleryImages.forEach((imagePath, index) => {
+            const item = document.createElement("button");
+            item.type = "button";
+            item.className = `gallery-item gallery-item-${(index % 5) + 1}`;
+            item.dataset.image = imagePath;
+            item.setAttribute("aria-label", `写真${index + 1}を拡大`);
+
+            const image = document.createElement("img");
+            image.src = imagePath;
+            image.alt = `AkiraとHinakoの写真${index + 1}`;
+            image.loading = index < 3 ? "eager" : "lazy";
+            image.addEventListener("error", () => item.remove(), { once: true });
+            item.appendChild(image);
+            gallery.appendChild(item);
+        });
+    }
     document.querySelectorAll(".story-photo img").forEach((image, index) => {
         if (storyImages[index]) image.src = storyImages[index];
     });

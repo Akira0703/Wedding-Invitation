@@ -12,59 +12,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Noto+Sans+JP:wght@300;400;500&amp;family=Noto+Serif+JP:wght@400;600&amp;family=Shippori+Mincho:wght@400;500;600;700&amp;family=Yuji+Syuku&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
 </head>
-<body class="is-locked wa-kacho">
+<body class="is-locked wa-balanced">
 <section aria-label="招待状を開く" class="invitation-cover" id="invitationCover">
 <div aria-hidden="true" class="cover-washi"></div>
-<div class="noren-stage">
-<p class="cover-kicker">寿　御結婚披露宴</p>
-<button aria-label="招待状を開く" class="noren-button" id="openInvitation" type="button">
-<span aria-hidden="true" class="noren-frame">
-<span class="noren-panel noren-left"><i>結</i></span>
-<span class="noren-panel noren-right"><i>縁</i></span>
-<span class="noren-knot"></span>
-</span>
-<span class="noren-seal">寿</span>
-</button>
-<div class="cover-names"><span>Akira</span><b>・</b><span>Hinako</span></div>
+<div class="invitation-card">
+<p class="cover-kicker">Wedding Invitation</p>
+<div class="cover-monogram">A <span>&amp;</span> H</div>
+<span aria-hidden="true" class="cover-mizuhiki"></span>
+<h1>Akira <i>&amp;</i> Hinako</h1>
 <p class="cover-date" id="coverDate">2026.11.14</p>
-<p class="cover-action">暖簾をひらく</p>
-</div></section>
-<div aria-hidden="true" id="loading"><div class="loading-content"><span class="loading-kamon">寿</span><p>ご縁を結ぶ日へ</p><h2 id="loadingNames">Akira &amp; Hinako</h2><span class="loading-line"></span></div></div>
+<button aria-label="招待状を開く" class="open-button" id="openInvitation" type="button"><span>招待状をひらく</span></button>
+</div>
+</section>
+<div aria-hidden="true" id="loading"><div class="loading-content"><span class="loading-monogram">A&amp;H</span><p>Wedding Invitation</p><h2 id="loadingNames">Akira &amp; Hinako</h2><span class="loading-line"></span></div></div>
 <main>
 <header class="hero" id="top">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide is-active" style="background-image:url('images/hero.jpg')"></div>
-<div class="hero-slide" style="background-image:url('images/photo1.jpg')"></div>
-<div class="hero-slide" style="background-image:url('images/photo2.jpg')"></div>
-</div>
+<div aria-hidden="true" class="hero-slides"></div>
 <div class="hero-overlay"></div>
 <div class="hero-content">
-<div aria-hidden="true" class="hero-kamon"><span>寿</span></div>
-<div class="hero-title-grid">
-<p class="hero-vertical hero-vertical-right">謹んで<br/>ご案内<br/>申し上げます</p>
-<div class="hero-main-title">
-<p class="sub-title">御結婚披露宴</p>
-<h1><span id="heroGroom">Akira</span><i>と</i><span id="heroBride">Hinako</span></h1>
+<p class="sub-title">Wedding Invitation</p>
+<h1><span id="heroGroom">Akira</span><i>&amp;</i><span id="heroBride">Hinako</span></h1>
 <span aria-hidden="true" class="mizuhiki-line"></span>
 <p class="date" id="heroDate">14 November 2026</p>
 <p class="venue-mini" id="heroVenue">THE CONDER HOUSE</p>
+<p class="hero-japanese">結びの日を　大切な皆さまと</p>
 </div>
-<p class="hero-vertical hero-vertical-left">佳き日に<br/>皆様と<br/>ともに</p>
-</div></div>
-<a aria-label="メッセージへ移動" class="scroll-down" href="#message">
-<span>Scroll</span>
-<i></i>
-</a>
+<a aria-label="メッセージへ移動" class="scroll-down" href="#message"><span>Scroll</span><i></i></a>
 </header>
 <section class="section section-countdown reveal">
 <div class="countdown-card"><span aria-hidden="true" class="countdown-sun"></span><p class="eyebrow">結びの日まで</p><p class="countdown-number" id="countdown">Loading...</p><p class="countdown-date" id="countdownDate">2026.11.14 SAT</p></div>
 </section>
 <section class="section message-section reveal" id="message">
-<div class="section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Greeting</p><h2>ご挨拶</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="section-heading"><p class="eyebrow">Greeting</p><h2>ご挨拶</h2><span aria-hidden="true" class="heading-rule"></span></div>
 <p class="message-copy">このたび 私たちは<br/>結婚式を挙げることとなりました。<br/><br/>これまで支えてくださった皆様へ<br/>感謝の心を込めまして<br/>ささやかな宴を催したく存じます。<br/><br/>佳き日に皆様とお会いできますことを<br/>心より楽しみにしております。</p>
 </section>
 <section class="story-section reveal">
-<div class="section section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Our Story</p><h2>ふたりの歩み</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="section section-heading"><p class="eyebrow">Our Story</p><h2>ふたりの歩み</h2><span aria-hidden="true" class="heading-rule"></span></div>
 <div class="story-track">
 <article class="story-item reveal-child">
 <figure class="story-photo"><img alt="2017年、ふたりが出会った頃の写真" src="images/story/story1.jpg"/></figure>
@@ -81,22 +64,12 @@
 </div>
 </section>
 <section class="gallery-section reveal">
-<div class="section section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Gallery</p><h2>想い出</h2><span aria-hidden="true" class="heading-rule"></span></div>
-<div class="gallery">
-<button aria-label="写真1を拡大" class="gallery-item gallery-item-large" data-image="images/photo1.jpg" type="button">
-<img alt="AkiraとHinakoの前撮り写真1" src="images/photo1.jpg"/>
-</button>
-<button aria-label="写真2を拡大" class="gallery-item" data-image="images/photo2.jpg" type="button">
-<img alt="AkiraとHinakoの前撮り写真2" src="images/photo2.jpg"/>
-</button>
-<button aria-label="写真3を拡大" class="gallery-item" data-image="images/photo3.jpg" type="button">
-<img alt="AkiraとHinakoの前撮り写真3" src="images/photo3.jpg"/>
-</button>
-</div>
+<div class="section section-heading"><p class="eyebrow">Gallery</p><h2>想い出</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="gallery" id="gallery"></div>
 </section>
 <section class="information-section reveal" id="information">
 <div class="section">
-<div class="section-heading light-heading"><span class="heading-mark">寿</span><p class="eyebrow">Information</p><h2>ご案内</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="section-heading light-heading"><p class="eyebrow">Information</p><h2>ご案内</h2><span aria-hidden="true" class="heading-rule"></span></div>
 <div class="info-grid">
 <article class="info-card">
 <span>壱</span><p>日取り</p><h3 id="infoDate">2026.11.14</h3><small id="infoDay">Saturday</small>
@@ -112,7 +85,7 @@
 </section>
 <section class="access-section reveal">
 <div class="section">
-<div class="section-heading"><span class="heading-mark">寿</span><p class="eyebrow">Access</p><h2>会場まで</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="section-heading"><p class="eyebrow">Access</p><h2>会場まで</h2><span aria-hidden="true" class="heading-rule"></span></div>
 <div class="access-card">
 <div class="access-copy">
 <p class="access-label">会場</p>
@@ -127,7 +100,7 @@
 </div>
 </section>
 <section class="section rsvp-section reveal" id="rsvp">
-<div class="section-heading"><span class="heading-mark">寿</span><p class="eyebrow">RSVP</p><h2>ご出欠</h2><span aria-hidden="true" class="heading-rule"></span></div>
+<div class="section-heading"><p class="eyebrow">RSVP</p><h2>ご出欠</h2><span aria-hidden="true" class="heading-rule"></span></div>
 <p class="rsvp-intro">お手数ではございますが、ご出欠をお知らせくださいませ。</p>
 <form id="rsvpForm" method="post" novalidate="" target="rsvpResponseFrame">
 <input id="submissionId" name="submissionId" type="hidden"/>

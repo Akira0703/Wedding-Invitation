@@ -23,12 +23,21 @@ window.WEDDING_CONFIG = Object.freeze({
   heroImages: [
     "images/hero.jpg",
     "images/photo1.jpg",
-    "images/photo2.jpg"
+    "images/photo2.jpg",
+    "images/photo3.jpg"
   ],
   galleryImages: [
     "images/photo1.jpg",
     "images/photo2.jpg",
-    "images/photo3.jpg"
+    "images/photo3.jpg",
+    "images/photo4.jpg",
+    "images/photo5.jpg",
+    "images/photo6.jpg",
+    "images/photo7.jpg",
+    "images/photo8.jpg",
+    "images/photo9.jpg",
+    "images/photo10.jpg",
+    "images/photo11.jpg"
   ],
   storyImages: [
     "images/story/story1.jpg",
