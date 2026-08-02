@@ -378,3 +378,54 @@ footer i{font-style:normal;color:#c6ac87;margin:0 10px}
     animation: none !important;
   }
 }
+
+
+/* ===== Hero slideshow: full photo without black letterboxing =====
+   The viewport height stays unchanged. A blurred cover layer fills the frame,
+   while the sharp foreground image keeps its complete aspect ratio. */
+.hero-slides {
+  background: #2b2c29 !important;
+}
+
+.hero-slide,
+.modern-natural .hero-slide,
+.wa-kacho .hero-slide {
+  overflow: hidden;
+  background-image: none !important;
+  background-color: transparent !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-slide::before,
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  background-image: var(--slide-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.hero-slide::before {
+  inset: -8%;
+  background-size: cover;
+  filter: blur(28px) brightness(.66) saturate(.92);
+  transform: scale(1.08);
+}
+
+.hero-slide::after {
+  inset: 0;
+  background-size: contain;
+}
+
+@media (max-width: 760px) {
+  .hero-slide::before {
+    inset: -12%;
+    filter: blur(24px) brightness(.62) saturate(.9);
+  }
+
+  .hero-slide::after {
+    background-size: contain;
+  }
+}
