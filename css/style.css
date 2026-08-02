@@ -336,96 +336,46 @@ footer i{font-style:normal;color:#c6ac87;margin:0 10px}
 }
 
 /* Hero image fit: keep the full photo visible on desktop and mobile. */
-.hero-slide {
-  background-color: #20231f;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+
+
+/* ===== Hero slideshow: edge-to-edge image and smooth crossfade ===== */
+.hero-slides {
+  background: #f4f1eb;
 }
 
-@media (max-width: 760px) {
-  .hero-slide {
-    background-position: center;
-    background-size: contain;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(180deg, rgba(15, 20, 17, .08), rgba(15, 20, 17, .38));
-  }
-}
-
-/* ===== Hero slideshow: show every image at the same full-image scale ===== */
 .hero-slide,
 .modern-natural .hero-slide,
 .wa-kacho .hero-slide {
-  background-size: contain !important;
-  background-position: center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
-  transform: none !important;
+  background-size: cover !important;
+  opacity: 0;
+  transform: scale(1.015) !important;
   animation: none !important;
+  transition:
+    opacity 2.2s cubic-bezier(.4, 0, .2, 1),
+    transform 8s ease-out !important;
+  will-change: opacity, transform;
 }
 
-.hero-slides {
-  background: #151515;
+.hero-slide.is-active,
+.modern-natural .hero-slide.is-active,
+.wa-kacho .hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1) !important;
+}
+
+.hero-slide::before,
+.hero-slide::after {
+  content: none !important;
+  display: none !important;
 }
 
 @media (max-width: 760px) {
   .hero-slide,
   .modern-natural .hero-slide,
   .wa-kacho .hero-slide {
-    background-size: contain !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
-
-
-/* ===== Hero slideshow: full photo without black letterboxing =====
-   The viewport height stays unchanged. A blurred cover layer fills the frame,
-   while the sharp foreground image keeps its complete aspect ratio. */
-.hero-slides {
-  background: #2b2c29 !important;
-}
-
-.hero-slide,
-.modern-natural .hero-slide,
-.wa-kacho .hero-slide {
-  overflow: hidden;
-  background-image: none !important;
-  background-color: transparent !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-.hero-slide::before,
-.hero-slide::after {
-  content: "";
-  position: absolute;
-  background-image: var(--slide-image);
-  background-position: center;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-.hero-slide::before {
-  inset: -8%;
-  background-size: cover;
-  filter: blur(28px) brightness(.66) saturate(.92);
-  transform: scale(1.08);
-}
-
-.hero-slide::after {
-  inset: 0;
-  background-size: contain;
-}
-
-@media (max-width: 760px) {
-  .hero-slide::before {
-    inset: -12%;
-    filter: blur(24px) brightness(.62) saturate(.9);
-  }
-
-  .hero-slide::after {
-    background-size: contain;
+    background-position: center center !important;
+    background-size: cover !important;
   }
 }
