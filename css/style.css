@@ -334,3 +334,47 @@ footer i{font-style:normal;color:#c6ac87;margin:0 10px}
   .modern-natural .access-card{grid-template-columns:1fr}
   .modern-natural .rsvp-section{width:90%;margin:75px auto;padding:70px 7%}
 }
+
+/* Hero image fit: keep the full photo visible on desktop and mobile. */
+.hero-slide {
+  background-color: #20231f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 760px) {
+  .hero-slide {
+    background-position: center;
+    background-size: contain;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(15, 20, 17, .08), rgba(15, 20, 17, .38));
+  }
+}
+
+/* ===== Hero slideshow: show every image at the same full-image scale ===== */
+.hero-slide,
+.modern-natural .hero-slide,
+.wa-kacho .hero-slide {
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-slides {
+  background: #151515;
+}
+
+@media (max-width: 760px) {
+  .hero-slide,
+  .modern-natural .hero-slide,
+  .wa-kacho .hero-slide {
+    background-size: contain !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
