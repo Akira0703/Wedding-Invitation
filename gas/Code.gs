@@ -19,9 +19,17 @@ function doGet() {
 }
 
 function doPost(e) {
+  console.log("RAW PARAMETER:");
+  console.log(JSON.stringify(e && e.parameter ? e.parameter : {}));
+
   try {
     const data = normalizeRequest_(e);
+
+    console.log("NORMALIZED DATA:");
+    console.log(JSON.stringify(data));
+
     validateRequest_(data);
+
     const cache = CacheService.getScriptCache();
     const cacheKey = `rsvp:${data.submissionId}`;
 
@@ -34,7 +42,15 @@ function doPost(e) {
 
     try {
       const sheet = getRsvpSheet_();
+
+      console.log("SPREADSHEET:");
+      console.log(sheet.getParent().getName());
+
+      console.log("SHEET:");
+      console.log(sheet.getName());
+
       ensureHeaders_(sheet);
+
       sheet.appendRow([
         new Date(),
         data.attendance,
@@ -72,7 +88,7 @@ function normalizeRequest_(e) {
     children: sanitize_(parameters.children),
     consideration: sanitize_(parameters.consideration),
     message: sanitize_(parameters.message),
-    postalCode: sanitize_(parameters.postalCode),
+    postalCode: normalizePostalCode_(parameters.postalCode),
     address: sanitize_(parameters.address)
   };
 }
@@ -86,7 +102,7 @@ function validateRequest_(data) {
     throw new Error("Name is required.");
   }
 
-  if (!/^\d{3}-?\d{4}$/.test(data.postalCode)) {
+  if (!/^\d{3}-\d{4}$/.test(data.postalCode)) {
     throw new Error("Valid postal code is required.");
   }
 
@@ -96,7 +112,13 @@ function validateRequest_(data) {
 }
 
 function getRsvpSheet_() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+
+  if (!spreadsheet) {
+    throw new Error("Active spreadsheet not found.");
+  }
+
+  const sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
     throw new Error(`Sheet not found: ${SHEET_NAME}`);
@@ -115,13 +137,35 @@ function ensureHeaders_(sheet) {
   );
 
   if (needsUpdate) {
-    sheet.getRange(1, 1, 1, REQUIRED_HEADERS.length).setValues([REQUIRED_HEADERS]);
+    sheet
+      .getRange(1, 1, 1, REQUIRED_HEADERS.length)
+      .setValues([REQUIRED_HEADERS]);
+
     sheet.setFrozenRows(1);
   }
 }
 
+function normalizePostalCode_(value) {
+  const digits = String(value || "")
+    .replace(/\D/g, "")
+    .slice(0, 7);
+
+  if (digits.length !== 7) {
+    return sanitize_(value);
+  }
+
+  return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+}
+
 function sanitize_(value) {
-  return String(value || "").trim().slice(0, 2000);
+  const text = String(value || "").trim().slice(0, 2000);
+
+  // スプレッドシートで数式として解釈されるのを防止
+  if (/^[=+\-@]/.test(text)) {
+    return "'" + text;
+  }
+
+  return text;
 }
 
 function createResponse_(status, message) {
@@ -134,11 +178,15 @@ function createResponse_(status, message) {
   return HtmlService
     .createHtmlOutput(`<!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"></head>
+<head>
+  <meta charset="utf-8">
+</head>
 <body>
 <script>
   const payload = ${payload};
+
   window.parent.postMessage(payload, "*");
+
   if (window.top !== window.parent) {
     window.top.postMessage(payload, "*");
   }
