@@ -144,7 +144,7 @@ function initHeroSlideshow() {
     const slides = [...document.querySelectorAll(".hero-slide")];
     if (slides.length < 2) return;
 
-    const SLIDE_DURATION = 6000;
+    const SLIDE_DURATION = 3000;
     let activeIndex = 0;
     let slideTimer;
     let hasStarted = false;
