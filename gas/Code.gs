@@ -22,7 +22,6 @@ function doPost(e) {
   try {
     const data = normalizeRequest_(e);
     validateRequest_(data);
-
     const cache = CacheService.getScriptCache();
     const cacheKey = `rsvp:${data.submissionId}`;
 
@@ -36,7 +35,6 @@ function doPost(e) {
     try {
       const sheet = getRsvpSheet_();
       ensureHeaders_(sheet);
-
       sheet.appendRow([
         new Date(),
         data.attendance,
@@ -74,7 +72,7 @@ function normalizeRequest_(e) {
     children: sanitize_(parameters.children),
     consideration: sanitize_(parameters.consideration),
     message: sanitize_(parameters.message),
-    postalCode: normalizePostalCode_(parameters.postalCode),
+    postalCode: sanitize_(parameters.postalCode),
     address: sanitize_(parameters.address)
   };
 }
@@ -108,18 +106,22 @@ function getRsvpSheet_() {
 }
 
 function ensureHeaders_(sheet) {
-  sheet.getRange(1, 1, 1, REQUIRED_HEADERS.length).setValues([REQUIRED_HEADERS]);
-  sheet.setFrozenRows(1);
+  const currentHeaders = sheet
+    .getRange(1, 1, 1, REQUIRED_HEADERS.length)
+    .getDisplayValues()[0];
+
+  const needsUpdate = REQUIRED_HEADERS.some(
+    (header, index) => currentHeaders[index] !== header
+  );
+
+  if (needsUpdate) {
+    sheet.getRange(1, 1, 1, REQUIRED_HEADERS.length).setValues([REQUIRED_HEADERS]);
+    sheet.setFrozenRows(1);
+  }
 }
 
 function sanitize_(value) {
   return String(value || "").trim().slice(0, 2000);
-}
-
-function normalizePostalCode_(value) {
-  return sanitize_(value)
-    .replace(/[０-９]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0xFEE0))
-    .replace(/[^0-9-]/g, "");
 }
 
 function createResponse_(status, message) {
