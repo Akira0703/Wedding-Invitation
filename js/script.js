@@ -4,8 +4,8 @@ const WEDDING_DATE = new Date(CONFIG.wedding.dateTime);
 const RSVP_MESSAGE_SOURCE = "wedding-invitation-rsvp";
 const COVER_STORAGE_KEY = "weddingInvitationOpened";
 
-document.addEventListener("DOMContentLoaded", () => {
-    applyWeddingConfig();
+document.addEventListener("DOMContentLoaded", async () => {
+    await applyWeddingConfig();
     initInvitationCover();
     initHeroSlideshow();
     initCountdown();
@@ -14,13 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
     initRsvpForm();
 });
 
-function applyWeddingConfig() {
+async function applyWeddingConfig() {
     const setText = (id, value) => {
         const element = document.getElementById(id);
         if (element) element.textContent = value;
     };
 
-    const { couple, wedding, venue, heroImages, galleryImages, storyImages = [] } = CONFIG;
+    const { couple, wedding, venue, galleryImages, storyImages = [] } = CONFIG;
+    const heroImages = [
+        "images/hero.jpg",
+        "images/photo2.jpg",
+        "images/photo3.jpg",
+        "images/photo4.jpg",
+        "images/photo5.jpg",
+        "images/photo6.jpg",
+        "images/photo7.jpg",
+        "images/photo8.jpg",
+        "images/photo9.jpg"
+    ];
     document.title = `${couple.groom} & ${couple.bride} | Wedding Invitation`;
     const description = document.getElementById("pageDescription");
     if (description) description.content = `${couple.groom} & ${couple.bride} Wedding Invitation - ${wedding.shortDate}`;
@@ -53,11 +64,12 @@ function applyWeddingConfig() {
 
     const heroContainer = document.querySelector(".hero-slides");
     if (heroContainer) {
+        const resolvedHeroImages = await resolveHeroImages(heroImages);
         heroContainer.innerHTML = "";
-        heroImages.forEach((imagePath, index) => {
+        resolvedHeroImages.forEach((imagePath, index) => {
             const slide = document.createElement("div");
             slide.className = `hero-slide${index === 0 ? " is-active" : ""}`;
-            slide.style.backgroundImage = `url('${imagePath}')`;
+            slide.style.backgroundImage = `url("${imagePath}")`;
             heroContainer.appendChild(slide);
         });
     }
@@ -83,6 +95,26 @@ function applyWeddingConfig() {
     }
     document.querySelectorAll(".story-photo img").forEach((image, index) => {
         if (storyImages[index]) image.src = storyImages[index];
+    });
+}
+
+
+async function resolveHeroImages(desktopImages) {
+    const isMobile = window.matchMedia("(max-width: 760px)").matches;
+    if (!isMobile) return desktopImages;
+
+    return Promise.all(desktopImages.map(async (desktopPath) => {
+        const mobilePath = desktopPath.replace(/^images\//, "images/mobile/");
+        return await imageExists(mobilePath) ? mobilePath : desktopPath;
+    }));
+}
+
+function imageExists(path) {
+    return new Promise((resolve) => {
+        const image = new Image();
+        image.onload = () => resolve(true);
+        image.onerror = () => resolve(false);
+        image.src = path;
     });
 }
 
