@@ -19,15 +19,8 @@ function doGet() {
 }
 
 function doPost(e) {
-  console.log("RAW PARAMETER:");
-  console.log(JSON.stringify(e && e.parameter ? e.parameter : {}));
-
   try {
     const data = normalizeRequest_(e);
-
-    console.log("NORMALIZED DATA:");
-    console.log(JSON.stringify(data));
-
     validateRequest_(data);
 
     const cache = CacheService.getScriptCache();
@@ -42,13 +35,6 @@ function doPost(e) {
 
     try {
       const sheet = getRsvpSheet_();
-
-      console.log("SPREADSHEET:");
-      console.log(sheet.getParent().getName());
-
-      console.log("SHEET:");
-      console.log(sheet.getName());
-
       ensureHeaders_(sheet);
 
       sheet.appendRow([
