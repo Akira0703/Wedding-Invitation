@@ -144,12 +144,38 @@ function initHeroSlideshow() {
     const slides = [...document.querySelectorAll(".hero-slide")];
     if (slides.length < 2) return;
 
+    const SLIDE_DURATION = 6000;
     let activeIndex = 0;
-    window.setInterval(() => {
+    let slideTimer;
+    let hasStarted = false;
+
+    const showNextSlide = () => {
         slides[activeIndex].classList.remove("is-active");
         activeIndex = (activeIndex + 1) % slides.length;
         slides[activeIndex].classList.add("is-active");
-    }, 5500);
+        slideTimer = window.setTimeout(showNextSlide, SLIDE_DURATION);
+    };
+
+    const startSlideshow = () => {
+        if (hasStarted) return;
+        hasStarted = true;
+        window.clearTimeout(slideTimer);
+        slideTimer = window.setTimeout(showNextSlide, SLIDE_DURATION);
+    };
+
+    const cover = document.getElementById("invitationCover");
+    const openButton = document.getElementById("openInvitation");
+
+    if (cover && openButton) {
+        openButton.addEventListener("click", () => {
+            // Start counting only after the envelope/loading sequence has finished.
+            window.setTimeout(startSlideshow, 2300);
+        }, { once: true });
+        return;
+    }
+
+    // When the invitation has already been opened in this tab, start from hero.jpg.
+    startSlideshow();
 }
 
 function initCountdown() {
