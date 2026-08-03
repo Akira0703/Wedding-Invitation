@@ -26,7 +26,7 @@
 </span>
 <span class="envelope-front"></span>
 <span class="envelope-flap"></span>
-<span class="wax-seal">A&amp;H</span>
+<span aria-hidden="true" class="wax-seal"></span>
 </span>
 </button>
 <p class="cover-action">Tap to open</p>
@@ -138,6 +138,31 @@
 </div>
 </fieldset>
 <label class="form-field" for="name"><span>お名前 <span aria-hidden="true">*</span></span><input autocomplete="name" id="name" name="name" required="" type="text"/></label>
+<label class="form-field" for="postalCode">
+  <span>郵便番号 <span aria-hidden="true">*</span></span>
+  <input
+    autocomplete="postal-code"
+    id="postalCode"
+    inputmode="numeric"
+    name="postalCode"
+    pattern="\d{3}-?\d{4}"
+    placeholder="123-4567"
+    required
+    type="text"
+  />
+</label>
+
+<label class="form-field" for="address">
+  <span>ご住所 <span aria-hidden="true">*</span></span>
+  <input
+    autocomplete="street-address"
+    id="address"
+    name="address"
+    placeholder="都道府県・市区町村・番地・建物名"
+    required
+    type="text"
+  />
+</label>
 <label class="form-field" for="allergy"><span>アレルギー・苦手な食材</span><textarea id="allergy" name="allergy" placeholder="ない場合は「なし」とご記入ください" rows="3"></textarea></label>
 <label class="form-field" for="children"><span>同伴のお子様</span><select id="children" name="children"><option value="">選択してください</option><option value="なし">なし</option><option value="1人">1人</option><option value="2人">2人</option><option value="3人以上">3人以上</option></select></label>
 <label class="form-field" for="consideration"><span>配慮事項</span><textarea id="consideration" name="consideration" placeholder="車椅子・妊娠中など、当日の配慮が必要な場合にご記入ください" rows="4"></textarea></label>

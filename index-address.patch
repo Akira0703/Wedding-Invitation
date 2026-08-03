@@ -1,0 +1,11 @@
+diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@
+-<label class="form-field" for="name"><span>お名前 <span aria-hidden="true">*</span></span><input autocomplete="name" id="name" name="name" required="" type="text"/></label>
++<label class="form-field" for="name"><span>お名前 <span aria-hidden="true">*</span></span><input autocomplete="name" id="name" name="name" required="" type="text"/></label>
++<label class="form-field" for="postalCode"><span>郵便番号 <span aria-hidden="true">*</span></span><input autocomplete="postal-code" id="postalCode" inputmode="numeric" maxlength="8" name="postalCode" pattern="[0-9０-９]{3}-?[0-9０-９]{4}" placeholder="例：460-0003" required="" type="text"/></label>
++<label class="form-field" for="address"><span>ご住所 <span aria-hidden="true">*</span></span><input autocomplete="street-address" id="address" name="address" placeholder="都道府県・市区町村・番地・建物名" required="" type="text"/></label>
+@@
+-<p>ご入力いただいた氏名、出欠情報、食物アレルギー、お子様に関する情報、配慮事項およびメッセージは、結婚式・披露宴の出欠確認、席次や料理の手配、当日のご案内および必要な対応の準備を目的として利用いたします。</p>
++<p>ご入力いただいた氏名、郵便番号、住所、出欠情報、食物アレルギー、お子様に関する情報、配慮事項およびメッセージは、結婚式・披露宴の出欠確認、招待状やご案内の送付、席次や料理の手配、当日のご案内および必要な対応の準備を目的として利用いたします。</p>

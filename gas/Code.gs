@@ -7,7 +7,9 @@ const REQUIRED_HEADERS = [
   "アレルギー",
   "お子様",
   "配慮事項",
-  "メッセージ"
+  "メッセージ",
+  "郵便番号",
+  "住所"
 ];
 
 function doGet() {
@@ -42,7 +44,9 @@ function doPost(e) {
         data.allergy,
         data.children,
         data.consideration,
-        data.message
+        data.message,
+        data.postalCode,
+        data.address
       ]);
 
       if (data.submissionId) {
@@ -69,7 +73,9 @@ function normalizeRequest_(e) {
     allergy: sanitize_(parameters.allergy),
     children: sanitize_(parameters.children),
     consideration: sanitize_(parameters.consideration),
-    message: sanitize_(parameters.message)
+    message: sanitize_(parameters.message),
+    postalCode: normalizePostalCode_(parameters.postalCode),
+    address: sanitize_(parameters.address)
   };
 }
 
@@ -80,6 +86,14 @@ function validateRequest_(data) {
 
   if (!data.name) {
     throw new Error("Name is required.");
+  }
+
+  if (!/^\d{3}-?\d{4}$/.test(data.postalCode)) {
+    throw new Error("Valid postal code is required.");
+  }
+
+  if (!data.address) {
+    throw new Error("Address is required.");
   }
 }
 
@@ -94,18 +108,18 @@ function getRsvpSheet_() {
 }
 
 function ensureHeaders_(sheet) {
-  const currentHeaders = sheet
-    .getRange(1, 1, 1, REQUIRED_HEADERS.length)
-    .getDisplayValues()[0];
-
-  if (currentHeaders.every((value) => value === "")) {
-    sheet.getRange(1, 1, 1, REQUIRED_HEADERS.length).setValues([REQUIRED_HEADERS]);
-    sheet.setFrozenRows(1);
-  }
+  sheet.getRange(1, 1, 1, REQUIRED_HEADERS.length).setValues([REQUIRED_HEADERS]);
+  sheet.setFrozenRows(1);
 }
 
 function sanitize_(value) {
   return String(value || "").trim().slice(0, 2000);
+}
+
+function normalizePostalCode_(value) {
+  return sanitize_(value)
+    .replace(/[０-９]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0xFEE0))
+    .replace(/[^0-9-]/g, "");
 }
 
 function createResponse_(status, message) {
