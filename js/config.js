@@ -11,7 +11,7 @@ window.WEDDING_CONFIG = Object.freeze({
   },
   venue: {
     name: "THE CONDER HOUSE",
-    area: "Nagoya, Aichi",
+    area: "5F The Conder Hall",
     postalAddress: "〒460-0003\n愛知県名古屋市中区錦2丁目20-25",
     mapUrl: "https://maps.app.goo.gl/wSW1pDJomre6aAv67",
     mapEmbedUrl: "https://www.google.com/maps?q=THE%20CONDER%20HOUSE%20Nagoya&output=embed"
