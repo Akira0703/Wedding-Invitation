@@ -517,3 +517,14 @@ footer i{font-style:normal;color:#c6ac87;margin:0 10px}
     background-position:center center;
   }
 }
+
+/* Planner detail additions */
+.info-contact{display:block;margin-top:8px;color:rgba(255,255,255,.72);font-size:11px;letter-spacing:.04em;}
+.info-time-list{margin-top:28px;display:flex;flex-direction:column;gap:8px;}
+.info-time-list p{display:flex;justify-content:space-between;align-items:baseline;margin:0;color:#fff;font-size:13px;}
+.info-time-list strong{font-weight:400;color:#c9ab80;letter-spacing:.08em;}
+.info-time-list time{font-family:var(--serif);font-size:20px;letter-spacing:.04em;}
+.rsvp-deadline{margin:-12px auto 38px;padding:18px 22px;max-width:420px;text-align:center;border:1px solid var(--gold);background:rgba(169,142,105,.08);}
+.rsvp-deadline p{margin:0 0 4px;color:var(--gold);font-family:var(--serif);font-size:12px;letter-spacing:.22em;text-transform:uppercase;}
+.rsvp-deadline strong{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;letter-spacing:.06em;}
+

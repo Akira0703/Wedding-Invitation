@@ -101,10 +101,20 @@
 <span>01</span><p>Date</p><h3 id="infoDate">2026.11.14</h3><small id="infoDay">Saturday</small>
 </article>
 <article class="info-card">
-<span>02</span><p>Venue</p><h3 id="infoVenue">THE CONDER HOUSE</h3><small id="infoArea">Nagoya, Aichi</small>
+<span>02</span>
+<p>Venue</p>
+<h3 id="infoVenue">THE CONDER HOUSE</h3>
+<small id="infoArea">5F The Conder Hall</small>
+<small class="info-contact">TEL 052-684-7713</small>
 </article>
 <article class="info-card">
-<span>03</span><p>Time</p><h3>追ってご案内</h3><small>確定後に更新いたします</small>
+<span>03</span>
+<p>Time</p>
+<div class="info-time-list">
+<p><strong>集合</strong><time datetime="11:30">11:30</time></p>
+<p><strong>挙式</strong><time datetime="12:00">12:00</time></p>
+<p><strong>披露宴</strong><time datetime="12:50">12:50</time></p>
+</div>
 </article>
 </div>
 </div>
@@ -128,6 +138,10 @@
 <section class="section rsvp-section reveal" id="rsvp">
 <div class="section-heading"><p class="eyebrow">Your Response</p><h2>RSVP</h2></div>
 <p class="rsvp-intro">お手数ではございますが、ご出欠をお知らせくださいませ。</p>
+<div class="rsvp-deadline" role="note" aria-label="返信期日">
+<p>Reply by</p>
+<strong>10月13日（火曜日）</strong>
+</div>
 <form id="rsvpForm" method="post" novalidate="" target="rsvpResponseFrame">
 <input id="submissionId" name="submissionId" type="hidden"/>
 <fieldset class="attendance-fieldset">
@@ -163,47 +177,20 @@
     type="text"
   />
 </label>
-<label class="form-field" for="allergy"><span>アレルギー・苦手な食材</span><textarea id="allergy" name="allergy" placeholder="ない場合は「なし」とご記入ください" rows="3"></textarea></label>
+<label class="form-field" for="allergy"><span>アレルギー</span><textarea id="allergy" name="allergy" placeholder="ない場合は「なし」とご記入ください" rows="3"></textarea></label>
 <label class="form-field" for="children"><span>同伴のお子様</span><select id="children" name="children"><option value="">選択してください</option><option value="なし">なし</option><option value="1人">1人</option><option value="2人">2人</option><option value="3人以上">3人以上</option></select></label>
 <label class="form-field" for="consideration"><span>配慮事項</span><textarea id="consideration" name="consideration" placeholder="車椅子・妊娠中など、当日の配慮が必要な場合にご記入ください" rows="4"></textarea></label>
 <label class="form-field" for="message"><span>メッセージ</span><textarea id="message" name="message" placeholder="任意でご記入ください" rows="5"></textarea></label>
 <p aria-live="polite" class="form-error" id="formError" role="alert"></p>
 <aside aria-labelledby="privacy-title" class="privacy-notice">
-  <h3 id="privacy-title">Privacy Notice</h3>
-
-  <div class="privacy-notice-body">
-    <p>
-      ご入力いただいた氏名、郵便番号、住所、出欠情報、食物アレルギー、
-      お子様に関する情報、配慮事項およびメッセージは、
-      結婚式・披露宴の出欠確認、招待状や必要なご案内の送付、
-      席次や料理の手配、当日のご案内および必要な対応の準備を目的として利用いたします。
-    </p>
-
-    <p>
-      ご入力いただいた情報は、新郎新婦が適切に管理し、
-      上記の目的以外には利用いたしません。
-      また、法令に基づく場合を除き、
-      ご本人の同意なく第三者へ提供することはありません。
-    </p>
-
-    <p>
-      回答内容は、アクセスを制限した環境で保管し、
-      結婚式終了後、必要な確認や精算等が完了した時点で、
-      適切な方法により削除いたします。
-    </p>
-
-    <p>
-      食物アレルギーや配慮事項については、
-      当日の対応に必要な範囲でご記入ください。
-      詳しい病歴や治療内容など、
-      結婚式の準備に必要のない情報は記載しないようお願いいたします。
-    </p>
-
-    <p class="privacy-consent">
-      送信をもって、上記の個人情報の取り扱いに
-      ご同意いただいたものといたします。
-    </p>
-  </div>
+<h3 id="privacy-title">Privacy Notice</h3>
+<div class="privacy-notice-body">
+<p>ご入力いただいた氏名、郵便番号、住所、出欠情報、食物アレルギー、お子様に関する情報、配慮事項およびメッセージは、結婚式・披露宴の出欠確認、招待状や必要なご案内の送付、席次や料理の手配、当日のご案内および必要な対応の準備を目的として利用いたします。</p>
+<p>ご入力いただいた情報は、新郎新婦が適切に管理し、上記の目的以外には利用いたしません。また、法令に基づく場合を除き、ご本人の同意なく第三者へ提供することはありません。</p>
+<p>回答内容は、アクセスを制限した環境で保管し、結婚式終了後、必要な確認や精算等が完了した時点で、適切な方法により削除いたします。</p>
+<p>食物アレルギーや配慮事項については、当日の対応に必要な範囲でご記入ください。詳しい病歴や治療内容など、結婚式の準備に必要のない情報は記載しないようお願いいたします。</p>
+<p class="privacy-consent">送信をもって、上記の個人情報の取り扱いにご同意いただいたものといたします。</p>
+</div>
 </aside>
 <button class="submit-button" type="submit"><span>回答を送信する</span></button>
 </form>
